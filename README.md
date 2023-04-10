@@ -33,3 +33,25 @@ WHERE first_name = 'Mary';`
 FROM film
 WHERE length < 50
 AND NOT (rental_rate = 2.99 OR rental_rate = 4.99);`
+
+## SQL STUDY 2
+
+## SQL STUDY 3
+
+## SQL STUDY 4
+
+## SQL STUDY 5
+
+## SQL STUDY 6
+
+## SQL STUDY 7
+
+## SQL STUDY 8
+
+## SQL STUDY 9
+
+## SQL STUDY 10
+
+## SQL STUDY 11
+
+## SQL STUDY 12
