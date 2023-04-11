@@ -176,10 +176,20 @@ LIMIT 1;`
 
 ## SQL STUDY 8
 
+Yakında geliyor. (Coming soon.)
+
 ## SQL STUDY 9
+
+Yakında geliyor. (Coming soon.)
 
 ## SQL STUDY 10
 
+Yakında geliyor. (Coming soon.)
+
 ## SQL STUDY 11
 
+Yakında geliyor. (Coming soon.)
+
 ## SQL STUDY 12
+
+Yakında geliyor. (Coming soon.)
