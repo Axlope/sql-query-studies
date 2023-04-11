@@ -104,6 +104,28 @@ WHERE city ILIKE '%r'; </code>`
 
 ## SQL STUDY 5
 
+1. film tablosunda bulunan ve film ismi (title) 'n' karakteri ile biten en uzun (length) 5 filmi sıralayınız. (List the 5 longest (length) movies in the movie table and the movie title (title) ends with the 'n' character.)
+
+`SELECT title, length FROM film
+WHERE title LIKE '%n'
+ORDER BY length DESC
+LIMIT 5;`
+
+2. film tablosunda bulunan ve film ismi (title) 'n' karakteri ile biten en kısa (length) ikinci(6,7,8,9,10) 5 filmi(6,7,8,9,10) sıralayınız. (List the shortest (length) second(6,7,8,9,10) 5 movies(6,7,8,9,10) in the movie table and the movie title ends with the 'n' character.)
+
+`SELECT title, length FROM film
+WHERE title LIKE '%n'
+ORDER BY length ASC
+OFFSET 5
+LIMIT 5;`
+
+3. customer tablosunda bulunan last_name sütununa göre azalan yapılan sıralamada store_id 1 olmak koşuluyla ilk 4 veriyi sıralayınız. (Sort the first 4 data, provided that store_id is 1 in the descending order according to the last_name column in the customer table.)
+
+`SELECT first_name, last_name, store_id FROM customer
+WHERE store_id = '1'
+ORDER BY last_name DESC
+LIMIT 4;`
+
 ## SQL STUDY 6
 
 ## SQL STUDY 7
