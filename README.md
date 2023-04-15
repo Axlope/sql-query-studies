@@ -176,7 +176,7 @@ LIMIT 1;`
 
 ## SQL STUDY 8
 
---1. test veritabanınızda employee isimli sütun bilgileri id(INTEGER), name VARCHAR(50), birthday DATE, email VARCHAR(100) olan bir tablo oluşturalım.
+--1. test veritabanınızda employee isimli sütun bilgileri id(INTEGER), name VARCHAR(50), birthday DATE, email VARCHAR(100) olan bir tablo oluşturalım. (Let's create a table in your test database with employee name column information id(INTEGER), name VARCHAR(50), birthday DATE, email VARCHAR(100).)
 
 `CREATE TABLE employee (
   id SERIAL PRIMARY KEY,
@@ -185,7 +185,7 @@ LIMIT 1;`
   email VARCHAR(100)
 );`
 
---2. Oluşturduğumuz employee tablosuna 'Mockaroo' servisini kullanarak 50 adet veri ekleyelim.
+--2. Oluşturduğumuz employee tablosuna 'Mockaroo' servisini kullanarak 50 adet veri ekleyelim. (Let's add 50 pieces of data to the employee table we created using the 'Mockaroo' service.)
 
 `insert into employee (id, name, birthday, email) values (1, 'Rutger', '07/05/2004', 'rchapelhow0@constantcontact.com');`  
 `insert into employee (id, name, birthday, email) values (2, 'Martino', '06/13/2020', 'mconnell1@hubpages.com');`  
@@ -238,7 +238,7 @@ LIMIT 1;`
 `insert into employee (id, name, birthday, email) values (49, 'Jerrie', '02/07/1965', 'jmarcroft1c@dell.com');`  
 `insert into employee (id, name, birthday, email) values (50, 'Jesselyn', '03/14/1984', 'jmoorfield1d@guardian.co.uk');`  
 
---3. Sütunların her birine göre diğer sütunları güncelleyecek 5 adet UPDATE işlemi yapalım.
+--3. Sütunların her birine göre diğer sütunları güncelleyecek 5 adet UPDATE işlemi yapalım. (Let's do 5 UPDATE operations that will update the other columns according to each of the columns.)
 
 `UPDATE employee SET email = 'rchapelhow0@gmail.com' WHERE id = 1;`
 
@@ -250,7 +250,7 @@ LIMIT 1;`
 
 `UPDATE employee SET birthday = '12/12/1988', email = 'a.bowart@yahoo.com' WHERE id = 5;`
 
---4. Sütunların her birine göre ilgili satırı silecek 5 adet DELETE işlemi yapalım.
+--4. Sütunların her birine göre ilgili satırı silecek 5 adet DELETE işlemi yapalım. (Let's do 5 DELETE operations that will delete the relevant row according to each of the columns.)
 
 `DELETE FROM employee WHERE id = 7; --id sütununda 7 olan satırı silecek.`
 
