@@ -188,10 +188,15 @@ LIMIT 1;`
 --2. Oluşturduğumuz employee tablosuna 'Mockaroo' servisini kullanarak 50 adet veri ekleyelim.
 
 `insert into employee (id, name, birthday, email) values (1, 'Rutger', '07/05/2004', 'rchapelhow0@constantcontact.com');`
+
 `insert into employee (id, name, birthday, email) values (2, 'Martino', '06/13/2020', 'mconnell1@hubpages.com');`
+
 `insert into employee (id, name, birthday, email) values (3, 'Bruis', '02/29/1980', 'blester2@github.io');`
+
 `insert into employee (id, name, birthday, email) values (4, 'Claiborne', '02/03/2005', 'cmccaughren3@usgs.gov');`
+
 `insert into employee (id, name, birthday, email) values (5, 'Alvina', '05/01/1999', 'abowart4@pbs.org');`
+
 `insert into employee (id, name, birthday, email) values (6, 'Tobey', '06/29/1979', 'tconklin5@yelp.com');`
 `insert into employee (id, name, birthday, email) values (7, 'Walliw', '02/27/1971', 'wmcquorkell6@facebook.com');`
 `insert into employee (id, name, birthday, email) values (8, 'Nikkie', '11/26/2011', 'ndecoursey7@craigslist.org');`
