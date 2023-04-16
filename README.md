@@ -176,7 +176,7 @@ LIMIT 1;`
 
 ## SQL STUDY 8
 
---1. test veritabanınızda employee isimli sütun bilgileri id(INTEGER), name VARCHAR(50), birthday DATE, email VARCHAR(100) olan bir tablo oluşturalım. (Let's create a table in your test database with employee name column information id(INTEGER), name VARCHAR(50), birthday DATE, email VARCHAR(100).)
+1. test veritabanınızda employee isimli sütun bilgileri id(INTEGER), name VARCHAR(50), birthday DATE, email VARCHAR(100) olan bir tablo oluşturalım. (Let's create a table in your test database with employee name column information id(INTEGER), name VARCHAR(50), birthday DATE, email VARCHAR(100).)
 
 `CREATE TABLE employee (
   id SERIAL PRIMARY KEY,
@@ -185,7 +185,7 @@ LIMIT 1;`
   email VARCHAR(100)
 );`
 
---2. Oluşturduğumuz employee tablosuna 'Mockaroo' servisini kullanarak 50 adet veri ekleyelim. (Let's add 50 pieces of data to the employee table we created using the 'Mockaroo' service.)
+2. Oluşturduğumuz employee tablosuna 'Mockaroo' servisini kullanarak 50 adet veri ekleyelim. (Let's add 50 pieces of data to the employee table we created using the 'Mockaroo' service.)
 
 `insert into employee (id, name, birthday, email) values (1, 'Rutger', '07/05/2004', 'rchapelhow0@constantcontact.com');`  
 `insert into employee (id, name, birthday, email) values (2, 'Martino', '06/13/2020', 'mconnell1@hubpages.com');`  
@@ -238,7 +238,7 @@ LIMIT 1;`
 `insert into employee (id, name, birthday, email) values (49, 'Jerrie', '02/07/1965', 'jmarcroft1c@dell.com');`  
 `insert into employee (id, name, birthday, email) values (50, 'Jesselyn', '03/14/1984', 'jmoorfield1d@guardian.co.uk');`  
 
---3. Sütunların her birine göre diğer sütunları güncelleyecek 5 adet UPDATE işlemi yapalım. (Let's do 5 UPDATE operations that will update the other columns according to each of the columns.)
+3. Sütunların her birine göre diğer sütunları güncelleyecek 5 adet UPDATE işlemi yapalım. (Let's do 5 UPDATE operations that will update the other columns according to each of the columns.)
 
 `UPDATE employee SET email = 'rchapelhow0@gmail.com' WHERE id = 1;`
 
@@ -250,7 +250,7 @@ LIMIT 1;`
 
 `UPDATE employee SET birthday = '12/12/1988', email = 'a.bowart@yahoo.com' WHERE id = 5;`
 
---4. Sütunların her birine göre ilgili satırı silecek 5 adet DELETE işlemi yapalım. (Let's do 5 DELETE operations that will delete the relevant row according to each of the columns.)
+4. Sütunların her birine göre ilgili satırı silecek 5 adet DELETE işlemi yapalım. (Let's do 5 DELETE operations that will delete the relevant row according to each of the columns.)
 
 `DELETE FROM employee WHERE id = 7; --id sütununda 7 olan satırı silecek.`
 
@@ -264,18 +264,18 @@ LIMIT 1;`
 
 ## SQL STUDY 9
 
---1. city tablosu ile country tablosunda bulunan şehir (city) ve ülke (country) isimlerini birlikte görebileceğimiz INNER JOIN sorgusunu yazınız. (Write the INNER JOIN query where we can see the city and country names in the city table and the country table together.)
+1. city tablosu ile country tablosunda bulunan şehir (city) ve ülke (country) isimlerini birlikte görebileceğimiz INNER JOIN sorgusunu yazınız. (Write the INNER JOIN query where we can see the city and country names in the city table and the country table together.)
 
 `SELECT city, country FROM city
 INNER JOIN country ON city.country_id = country.country_id`
 
---2. customer tablosu ile payment tablosunda bulunan payment_id ile customer tablosundaki first_name ve last_name isimlerini birlikte görebileceğimiz INNER JOIN sorgusunu yazınız. (Write the INNER JOIN query where we can see the customer table and the payment_id in the payment table and the first_name and last_name names in the customer table together.)
+2. customer tablosu ile payment tablosunda bulunan payment_id ile customer tablosundaki first_name ve last_name isimlerini birlikte görebileceğimiz INNER JOIN sorgusunu yazınız. (Write the INNER JOIN query where we can see the customer table and the payment_id in the payment table and the first_name and last_name names in the customer table together.)
 
 `SELECT payment.payment_id, customer.first_name, customer.last_name
 FROM payment
 INNER JOIN customer ON payment.customer_id = customer.customer_id;`
 
---3. customer tablosu ile rental tablosunda bulunan rental_id ile customer tablosundaki first_name ve last_name isimlerini birlikte görebileceğimiz INNER JOIN sorgusunu yazınız. (Write the INNER JOIN query where we can see the customer table and the rental_id in the rental table and the first_name and last_name names in the customer table together.)
+3. customer tablosu ile rental tablosunda bulunan rental_id ile customer tablosundaki first_name ve last_name isimlerini birlikte görebileceğimiz INNER JOIN sorgusunu yazınız. (Write the INNER JOIN query where we can see the customer table and the rental_id in the rental table and the first_name and last_name names in the customer table together.)
 
 `SELECT rental.rental_id, customer.first_name, customer.last_name
 FROM rental
@@ -284,7 +284,23 @@ ON rental.customer_id = customer.customer_id;`
 
 ## SQL STUDY 10
 
-Yakında geliyor. (Coming soon.)
+1. city tablosu ile country tablosunda bulunan şehir (city) ve ülke (country) isimlerini birlikte görebileceğimiz LEFT JOIN sorgusunu yazınız. (Write the LEFT JOIN query where we can see the city and country names in the city table and the country table together.)
+
+`SELECT city.city, country.country
+FROM city
+LEFT JOIN country ON city.country_id = country.country_id;`
+
+2. customer tablosu ile payment tablosunda bulunan payment_id ile customer tablosundaki first_name ve last_name isimlerini birlikte görebileceğimiz RIGHT JOIN sorgusunu yazınız. (Write the RIGHT JOIN query where we can see the customer table and the payment_id in the payment table and the first_name and last_name names in the customer table together.)
+
+`SELECT payment.payment_id, customer.first_name, customer.last_name
+FROM payment
+RIGHT JOIN customer ON payment.customer_id = customer.customer_id;`
+
+3. customer tablosu ile rental tablosunda bulunan rental_id ile customer tablosundaki first_name ve last_name isimlerini birlikte görebileceğimiz FULL JOIN sorgusunu yazınız. (Write the FULL JOIN query where we can see the customer table and the rental_id in the rental table and the first_name and last_name names in the customer table together.)
+
+`SELECT rental.rental_id, customer.first_name, customer.last_name
+FROM rental
+FULL JOIN customer ON rental.customer_id = customer.customer_id;`
 
 ## SQL STUDY 11
 
