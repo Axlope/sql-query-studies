@@ -298,14 +298,71 @@ RIGHT JOIN customer ON payment.customer_id = customer.customer_id;`
 
 3. customer tablosu ile rental tablosunda bulunan rental_id ile customer tablosundaki first_name ve last_name isimlerini birlikte görebileceğimiz FULL JOIN sorgusunu yazınız. (Write the FULL JOIN query where we can see the customer table and the rental_id in the rental table and the first_name and last_name names in the customer table together.)
 
-`SELECT rental.rental_id, customer.first_name, customer.last_name  
-FROM rental  
+`SELECT rental.rental_id, customer.first_name, customer.last_name
+FROM rental
 FULL JOIN customer ON rental.customer_id = customer.customer_id;`
 
 ## SQL STUDY 11
 
-Yakında geliyor. (Coming soon.)
+1. actor ve customer tablolarında bulunan first_name sütunları için tüm verileri sıralayalım. (Let's sort all the data for the first_name columns in the actor and customer tables.)
+
+`(SELECT first_name FROM actor)
+UNION
+(SELECT first_name FROM customer);`
+
+2. actor ve customer tablolarında bulunan first_name sütunları için kesişen verileri sıralayalım. (Let's sort the intersecting data for the first_name columns in the actor and customer tables.)
+
+`(SELECT first_name FROM actor)
+INTERSECT
+(SELECT first_name FROM customer)`
+
+3. actor ve customer tablolarında bulunan first_name sütunları için ilk tabloda bulunan ancak ikinci tabloda bulunmayan verileri sıralayalım. (For the first_name columns in the actor and customer tables, let's sort the data in the first table but not in the second table.)
+
+`(SELECT first_name FROM actor)
+EXCEPT
+(SELECT first_name FROM customer)`
+
+4. İlk 3 sorguyu tekrar eden veriler için de yapalım. (Let's also do the first 3 queries for repeating data.)
+
+4.1
+`(SELECT first_name FROM actor)
+UNION ALL
+(SELECT first_name FROM customer);`
+
+4.2
+`(SELECT first_name FROM actor)
+INTERSECT ALL
+(SELECT first_name FROM customer);`
+
+4.3
+`(SELECT first_name FROM actor)
+EXCEPT ALL
+(SELECT first_name FROM customer);`
 
 ## SQL STUDY 12
 
-Yakında geliyor. (Coming soon.)
+1. film tablosunda film uzunluğu length sütununda gösterilmektedir. Uzunluğu ortalama film uzunluğundan fazla kaç tane film vardır? (In the movie table, the movie length is shown in the length column. How many movies are longer than the average movie length?)
+
+`SELECT COUNT(*) AS count_films
+FROM film
+WHERE length > (SELECT AVG(length) FROM film);`
+
+2. film tablosunda en yüksek rental_rate değerine sahip kaç tane film vardır? (How many movies have the highest rental_rate in the movie table?)
+
+`SELECT COUNT(*) AS count_films
+FROM film
+WHERE rental_rate = (SELECT MAX(rental_rate) FROM film);`
+
+3. film tablosunda en düşük rental_rate ve en düşün replacement_cost değerlerine sahip filmleri sıralayınız. (In the movie table, list the movies with the lowest rental_rate and the lowest replacement_cost values.)
+
+`SELECT title, rental_rate, replacement_cost
+FROM film
+WHERE rental_rate = (SELECT MIN(rental_rate) FROM film)
+AND replacement_cost = (SELECT MIN(replacement_cost) FROM film);`
+
+4. payment tablosunda en fazla sayıda alışveriş yapan müşterileri(customer) sıralayınız. (In the payment table, list the customers who make the most purchases.)
+
+`SELECT customer_id, COUNT(*) AS most_purchases 
+FROM payment
+GROUP BY customer_id
+ORDER BY most_purchases DESC;`
