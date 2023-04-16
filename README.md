@@ -298,8 +298,8 @@ RIGHT JOIN customer ON payment.customer_id = customer.customer_id;`
 
 3. customer tablosu ile rental tablosunda bulunan rental_id ile customer tablosundaki first_name ve last_name isimlerini birlikte görebileceğimiz FULL JOIN sorgusunu yazınız. (Write the FULL JOIN query where we can see the customer table and the rental_id in the rental table and the first_name and last_name names in the customer table together.)
 
-`SELECT rental.rental_id, customer.first_name, customer.last_name
-FROM rental
+`SELECT rental.rental_id, customer.first_name, customer.last_name  
+FROM rental  
 FULL JOIN customer ON rental.customer_id = customer.customer_id;`
 
 ## SQL STUDY 11
